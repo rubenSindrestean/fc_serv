@@ -302,7 +302,10 @@ router.post('/submitOrder', (req, res) => {
             const order = xhr.response; 
             console.log(`Order print`)
             console.log(order); 
-            if(('orderNo' in order) && ('bonusCode' in offer)) {
+            if(order.hasOwnProperty("error")) {
+                return console.log(`Response has an error`); 
+            }
+            if(order.hasOwnProperty("orderNo") && offer.hasOwnProperty("bonusCode")) {
                 const bonusCode = offer.bonusCode;
                 const orderId = order.orderNo; 
                 ordersDb.create(orderId, bonusCode, new Date());
