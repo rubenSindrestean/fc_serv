@@ -300,6 +300,9 @@ router.post('/submitOrder', (req, res) => {
         if (xhr.readyState === 4) {
             console.log(xhr.response);
             const order = xhr.response; 
+            if(('error' in order) && order.error == true) {
+                return console.log(`There was an error trying to submit an order...`); 
+            }
             if(('orderNo' in order) && ('bonusCode' in offer)) {
                 const bonusCode = offer.bonusCode;
                 const orderId = order.orderNo; 
