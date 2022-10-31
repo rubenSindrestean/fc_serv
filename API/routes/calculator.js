@@ -157,12 +157,12 @@ router.post('/submitOrder', (req, res) => {
     } else {
         // Format cellphone / telefon
         var dates = {
-            sigDate: isValidDate(appointment.digitalSignatureDate)? parseDate(appointment.digitalSignatureDate).toISOString() : null,
+            sigDate: isValidDate(appointment.digitalSignatureDate)? parseDate(`${appointment.digitalSignatureDate} ${new Date().getHours()-4}:${new Date().getMinutes()}`).toISOString() : null,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.digitalSignatureDate).toISOString() : null,
             beforeContractTerminated: isValidDate(appointment.contractResigned)? parseDate(appointment.contractResigned).toISOString() : false,
             birthday: isValidDate(address.birthDate)? parseDate(address.birthDate).toISOString() : null,
         }
-        console.log(offer); 
+        console.log(dates.sigDate); 
         var phones = {}; 
         if(('bonusCode' in offer)) {
             console.log(`We have a bonusCode: ${offer.bonusCode}`);
