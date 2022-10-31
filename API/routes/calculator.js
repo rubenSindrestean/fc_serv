@@ -156,8 +156,14 @@ router.post('/submitOrder', (req, res) => {
         res.status(500);
     } else {
         // Format cellphone / telefon
+        var sigDate = null;
+        if(isValidDate(appointment.digitalSignatureDate)) {
+            let dateObj = parseDate(appointment.digitalSignatureDate); 
+            sigDate = new Date(`${dateObj.getDate() - 1}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`).toISOString();
+            console.log(sigDate);
+        }
         var dates = {
-            sigDate: isValidDate(appointment.digitalSignatureDate)? parseDate(appointment.digitalSignatureDate).toISOString() : null,
+            sigDate: sigDate,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.wishdelivery).toISOString() : null,
             beforeContractTerminated: isValidDate(appointment.contractResigned)? parseDate(appointment.contractResigned).toISOString() : false,
             birthday: isValidDate(address.birthDate)? parseDate(address.birthDate).toISOString() : null,
