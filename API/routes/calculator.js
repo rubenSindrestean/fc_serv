@@ -158,10 +158,10 @@ router.post('/submitOrder', (req, res) => {
         // Format cellphone / telefon
         var sigDate = null;
         if(isValidDate(appointment.digitalSignatureDate)) {
-            let dateObj = parseDate(appointment.digitalSignatureDate); 
-            sigDate = new Date(new Date(`${dateObj.getDate() - 1}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`).toDateString()).toISOString();
-            console.log(sigDate);
+            sigDate = parseDate(appointment.digitalSignatureDate); 
+            sigDate.setDate(sigDate.getDate() - 1); 
         }
+        console.log(sigDate); 
         var dates = {
             sigDate: sigDate,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.wishdelivery).toISOString() : null,
