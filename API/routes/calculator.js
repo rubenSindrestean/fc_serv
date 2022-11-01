@@ -159,7 +159,7 @@ router.post('/submitOrder', (req, res) => {
         var sigDate = null;
         if(isValidDate(appointment.digitalSignatureDate)) {
             let dateObj = parseDate(appointment.digitalSignatureDate); 
-            sigDate = new Date(`${dateObj.getDate() - 1}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`).toISOString();
+            sigDate = new Date(new Date(`${dateObj.getDate() - 1}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`).toDateString()).toISOString();
             console.log(sigDate);
         }
         var dates = {
