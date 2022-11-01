@@ -9,7 +9,7 @@ const OrdersDB = require('../../database/orders');
 
 
 // API Token
-const mode = "demo"; // development is for production 
+const mode = "development"; // development is for production 
 const realToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NnhvRExDZzNUa3VEbm9IaCIsImFwcElkIjoiTmNDWHZvMkRZV01GUTVxc0UiLCJzZXJ2aWNlTmFtZSI6IlVzZXJTZXJ2aWNlIiwiZWdvbkFwaUtleSI6ImZlZDhhZTIwZTYxZWRmZTY2ZjYzMzU0YWI1NjlhMTUzIiwiaWF0IjoxNjQ5Njg2MjM3fQ.KtspsIQv1jtec6OUZQEiLa63NgKhyfIJl9oROC_epCU`
 const demoToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ2WGZMQ05DRTJ5SEpaQUV5UiIsImFwcElkIjoia0ZNelk5WkRxb2s1NUVIYXciLCJzZXJ2aWNlTmFtZSI6IlVzZXJTZXJ2aWNlIiwiZWdvbkFwaUtleSI6IjgyYjk2MjMyYjQyMTA4ZjdmZGJiMjY3YTg5NjQxOWIyIiwiaWF0IjoxNTUwODQ5NTIxfQ.ht-LPAhxwTnbdUn3uBYwuayib-YRfZi8r3qNQWmTTl8`; 
 const resellerId = 13321; 
@@ -161,7 +161,6 @@ router.post('/submitOrder', (req, res) => {
             sigDate = parseDate(appointment.digitalSignatureDate); 
             sigDate.setDate(sigDate.getDate() - 1); 
         }
-        console.log(sigDate); 
         var dates = {
             sigDate: sigDate,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.wishdelivery).toISOString() : null,
