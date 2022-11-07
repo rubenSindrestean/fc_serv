@@ -162,12 +162,11 @@ router.post('/submitOrder', (req, res) => {
             sigDate.setDate(sigDate.getDate() - 1); 
         }
         var dates = {
-            sigDate: sigDate,
+            sigDate: sigDate? sigDate.toISOString() : null,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.wishdelivery).toISOString() : null,
             beforeContractTerminated: isValidDate(appointment.contractResigned)? parseDate(appointment.contractResigned).toISOString() : false,
             birthday: isValidDate(address.birthDate)? parseDate(address.birthDate).toISOString() : null,
         }
-        console.log(offer); 
         var phones = {}; 
         if(('bonusCode' in offer)) {
             console.log(`We have a bonusCode: ${offer.bonusCode}`);
@@ -304,6 +303,7 @@ router.post('/submitOrder', (req, res) => {
         xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             const order = xhr.response; 
+            console.log(order); 
             if(order.hasOwnProperty("orderNo") && offer.hasOwnProperty("bonusCode")) {
                 const bonusCode = offer.bonusCode;
                 const orderId = order.orderNo; 
