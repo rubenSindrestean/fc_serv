@@ -158,9 +158,11 @@ router.post('/submitOrder', (req, res) => {
         // Format cellphone / telefon
         var sigDate = null;
         if(isValidDate(appointment.digitalSignatureDate)) {
+            console.log(appointment.digitalSignatureDate, typeof appointment.digitalSignatureDate);
             sigDate = parseDate(appointment.digitalSignatureDate); 
             sigDate.setDate(sigDate.getDate() - 1); 
         }
+        console.log(`sigDate: ${sigDate}`); 
         var dates = {
             sigDate: sigDate? sigDate.toISOString() : null,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.wishdelivery).toISOString() : null,
@@ -168,9 +170,6 @@ router.post('/submitOrder', (req, res) => {
             birthday: isValidDate(address.birthDate)? parseDate(address.birthDate).toISOString() : null,
         }
         var phones = {}; 
-        if(('bonusCode' in offer)) {
-            console.log(`We have a bonusCode: ${offer.bonusCode}`);
-        }
         if(address.cellphone.length > 0) {
             const prefix = address.cellphone.slice(0, 4);
             const rest = address.cellphone.slice(5, address.cellphone.length); 
@@ -192,7 +191,6 @@ router.post('/submitOrder', (req, res) => {
         }
 
         //
-
         var dataToSubmit = {
             resellerId: resellerId, 
             delivery: {
