@@ -311,7 +311,7 @@ router.post('/submitOrder', (req, res) => {
             res.json(JSON.parse(xhr.response)).end(); 
         }};
 
-        xhr.send(JSON.stringify(dataToSubmit));
+        xhr.send(dataToSubmit);
     }
 });
 
