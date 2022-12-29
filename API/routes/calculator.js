@@ -162,7 +162,7 @@ router.post('/submitOrder', (req, res) => {
             sigDate = parseDate(appointment.digitalSignatureDate); 
             sigDate.setDate(sigDate.getDate() - 1); 
         }
-        console.log(`sigDate: ${sigDate}`); 
+        console.log(`sigDate: ${sigDate.toISOString()}`); 
         var dates = {
             sigDate: sigDate? sigDate.toISOString() : null,
             deliveryDate: isValidDate(appointment.wishdelivery)? parseDate(appointment.wishdelivery).toISOString() : null,
@@ -311,7 +311,7 @@ router.post('/submitOrder', (req, res) => {
             res.json(JSON.parse(xhr.response)).end(); 
         }};
 
-        xhr.send(dataToSubmit);
+        xhr.send(JSON.stringify(dataToSubmit));
     }
 });
 
