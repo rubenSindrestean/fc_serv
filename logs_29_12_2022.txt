@@ -1,0 +1,53 @@
+2022-12-29T00:44:47.427336+00:00 app[web.1]: {
+2022-12-29T00:44:47.427338+00:00 app[web.1]: resellerId: 13321,
+2022-12-29T00:44:47.427338+00:00 app[web.1]: delivery: {
+2022-12-29T00:44:47.427339+00:00 app[web.1]: country: '81',
+2022-12-29T00:44:47.427339+00:00 app[web.1]: zip: '78588',
+2022-12-29T00:44:47.427339+00:00 app[web.1]: city: 'Denkingen',
+2022-12-29T00:44:47.427340+00:00 app[web.1]: street: 'Auf Bulz',
+2022-12-29T00:44:47.427340+00:00 app[web.1]: houseNumber: '1'
+2022-12-29T00:44:47.427340+00:00 app[web.1]: },
+2022-12-29T00:44:47.427341+00:00 app[web.1]: contactPerson: {
+2022-12-29T00:44:47.427341+00:00 app[web.1]: salutation: 'Frau',
+2022-12-29T00:44:47.427341+00:00 app[web.1]: firstName: 'Test',
+2022-12-29T00:44:47.427341+00:00 app[web.1]: lastName: 'Test',
+2022-12-29T00:44:47.427342+00:00 app[web.1]: clientTitle: '',
+2022-12-29T00:44:47.427342+00:00 app[web.1]: birthday: '2002-01-01T00:00:00.000Z'
+2022-12-29T00:44:47.427342+00:00 app[web.1]: },
+2022-12-29T00:44:47.427343+00:00 app[web.1]: contact: {
+2022-12-29T00:44:47.427344+00:00 app[web.1]: email: 'mail@test.com',
+2022-12-29T00:44:47.427344+00:00 app[web.1]: phonePrefix: '0157',
+2022-12-29T00:44:47.427344+00:00 app[web.1]: phoneNumber: '9565323'
+2022-12-29T00:44:47.427345+00:00 app[web.1]: },
+2022-12-29T00:44:47.427345+00:00 app[web.1]: createdBy: {
+2022-12-29T00:44:47.427345+00:00 app[web.1]: resellerId: 13321,
+2022-12-29T00:44:47.427345+00:00 app[web.1]: salutation: 'Herr',
+2022-12-29T00:44:47.427345+00:00 app[web.1]: firstName: 'Emin',
+2022-12-29T00:44:47.427346+00:00 app[web.1]: lastName: 'Güleryüz',
+2022-12-29T00:44:47.427346+00:00 app[web.1]: company: 'Güleryüz'
+2022-12-29T00:44:47.427346+00:00 app[web.1]: },
+2022-12-29T00:44:47.427347+00:00 app[web.1]: products: [
+2022-12-29T00:44:47.427347+00:00 app[web.1]: {
+2022-12-29T00:44:47.427347+00:00 app[web.1]: rateId: 14192,
+2022-12-29T00:44:47.427348+00:00 app[web.1]: consum: 2000,
+2022-12-29T00:44:47.427348+00:00 app[web.1]: consumNt: 0,
+2022-12-29T00:44:47.427348+00:00 app[web.1]: branch: 'electric',
+2022-12-29T00:44:47.427348+00:00 app[web.1]: type: 'private',
+2022-12-29T00:44:47.427349+00:00 app[web.1]: sigDate: '2022-12-28T00:00:00.000Z',
+2022-12-29T00:44:47.427349+00:00 app[web.1]: deliveryType: 'change',
+2022-12-29T00:44:47.427349+00:00 app[web.1]: fastDelivery: 0,
+2022-12-29T00:44:47.427350+00:00 app[web.1]: deliveryDate: '2023-02-01T00:00:00.000Z',
+2022-12-29T00:44:47.427350+00:00 app[web.1]: counterNumber: '4838939292',
+2022-12-29T00:44:47.427350+00:00 app[web.1]: pointOfDelivery: '',
+2022-12-29T00:44:47.427351+00:00 app[web.1]: beforeProviderCustomerId: '48383828',
+2022-12-29T00:44:47.427352+00:00 app[web.1]: beforeProviderName: 'EnBW Energie Baden-Württemberg AG',
+2022-12-29T00:44:47.427352+00:00 app[web.1]: beforeProviderId: '4041409000006',
+2022-12-29T00:44:47.427352+00:00 app[web.1]: marketLocationId: '',
+2022-12-29T00:44:47.427353+00:00 app[web.1]: beforeContractTerminated: false,
+2022-12-29T00:44:47.427353+00:00 app[web.1]: referenceResellerId: 13321
+2022-12-29T00:44:47.427353+00:00 app[web.1]: }
+2022-12-29T00:44:47.427354+00:00 app[web.1]: ],
+2022-12-29T00:44:47.427354+00:00 app[web.1]: aditional: { reference_reseller_id: 13321 },
+2022-12-29T00:44:47.427354+00:00 app[web.1]: payment: { paymentType: 'debit' }
+2022-12-29T00:44:47.427355+00:00 app[web.1]: }
+2022-12-29T00:44:47.920916+00:00 app[web.1]: {"error":true,"serviceName":"OrderService","namespace":"aos","method":"exportOrder","message":"Unexpected token < in JSON at position 0","code":400,"data":{"resellerId":13321,"delivery":{"country":"81","zip":"78588","city":"Denkingen","street":"Auf Bulz","houseNumber":"1"},"contactPerson":{"salutation":"Frau","firstName":"Test","lastName":"Test","clientTitle":"","birthday":"2002-01-01T00:00:00.000Z"},"contact":{"email":"mail@test.com","phonePrefix":"0157","phoneNumber":"9565323"},"createdBy":{"resellerId":13321,"salutation":"Herr","firstName":"Emin","lastName":"Güleryüz","company":"Güleryüz"},"products":[{"rateId":14192,"consum":2000,"consumNt":0,"branch":"electric","type":"private","sigDate":"2022-12-28T00:00:00.000Z","deliveryType":"change","fastDelivery":0,"deliveryDate":"2023-02-01T00:00:00.000Z","counterNumber":"4838939292","pointOfDelivery":"","beforeProviderCustomerId":"48383828","beforeProviderName":"EnBW Energie Baden-Württemberg AG","beforeProviderId":"4041409000006","marketLocationId":"","beforeContractTerminated":false,"referenceResellerId":13321,"netzProviderId":5466}],"aditional":{"reference_reseller_id":13321},"payment":{"paymentType":"debit"}},"debug":[{"serviceName":"EgonApiService","namespace":"aos","method":"findRates","data":{},"debug":[]}]}
